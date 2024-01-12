@@ -38,12 +38,15 @@ public class IMTCalculator extends JFrame {
 
             int diameter = Math.min(width = 84 , height = 84); // Menggunakan diameter yang lebih kecil
 
+            // Menggambar setengah lingkaran dengan diameter yang lebih kecil
             g2d.setColor(color);
             g2d.fillArc(0, height - diameter, diameter, diameter, 0, 180);
 
+            // Menambahkan teks kategori
             g2d.setColor(Color.WHITE);
             g2d.drawString(category, diameter / 4, height - diameter / 2);
 
+            // Menambahkan panah
             int arrowSize = 10;
             int[] xPoints = {diameter / 2, diameter / 2 + arrowSize, diameter / 2 - arrowSize};
             int[] yPoints = {height - diameter / 2, height - diameter / 2 + arrowSize, height - diameter / 2 + arrowSize};
@@ -86,6 +89,7 @@ public class IMTCalculator extends JFrame {
 
         buttonCalculate = new JButton("Hitung");
 
+        // Inisialisasi panel untuk grafik
         categoryPanel = new IMTCategoryPanel("", Color.ORANGE);
 
         buttonCalculate.addActionListener(new ActionListener() {
